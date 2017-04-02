@@ -657,12 +657,12 @@ class View implements jsExpressionable
      *
      * @return string
      */
-    public function render()
+    public function render($with_js = true)
     {
         $this->renderAll();
 
         return
-            $this->getJS(true).
+            $this->getJS($with_js).
             $this->template->render();
     }
 
