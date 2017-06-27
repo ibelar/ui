@@ -217,7 +217,8 @@ class App
 
         // Semantic UI
         $url = ($this->cdn && isset($this->cdn['semantic-ui'])) ? $this->cdn['semantic-ui'] : '../public';
-        $this->requireJS($url.'/semantic.min.js');
+	    $this->requireJS('/vendor/atk4/ui/public'.'/semantic.js');
+        //$this->requireJS($url.'/semantic.js');
         $this->requireCSS($url.'/semantic.css');
 
         // Serialize Object
@@ -231,7 +232,8 @@ class App
 
         // Agile UI
         $url = ($this->cdn && isset($this->cdn['atk'])) ? $this->cdn['atk'] : '../public';
-        $this->requireJS($url.'/atk4JS.min.js');
+        //$this->requireJS($url.'/atk4JS.min.js');
+	    $this->requireJS('/vendor/atk4/ui/public'.'/atk4JS.js');
         $this->requireJS($url.'/agileui.js');
         $this->requireCSS($url.'/agileui.css');
     }

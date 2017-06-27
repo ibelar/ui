@@ -431,7 +431,8 @@ class Form extends View //implements \ArrayAccess - temporarily so that our buil
         $this->add(new View(['element'=>'input']))
             ->setAttr('name', $cb->name)
             ->setAttr('value', 'submit')
-            ->setAttr('type', 'hidden');
+            //->setAttr('type', 'hidden')
+	        ->setStyle(['display'=>'none']);
 
         $cb->set(function () {
             try {
@@ -461,6 +462,7 @@ class Form extends View //implements \ArrayAccess - temporarily so that our buil
         $this->js(true)
             ->api(['url'=>$cb->getURL(),  'method'=>'POST', 'serializeForm'=>true])
             ->form(['inline'=>true, 'on'=>'blur']);
+        //$this->js(true)->bindFormKeydown();
 
         $this->on('change', 'input', $this->js()->form('remove prompt', new jsExpression('$(this).attr("name")')));
     }
