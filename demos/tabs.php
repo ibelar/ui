@@ -28,3 +28,5 @@ $t->addTab('Dynamic Form', function ($tab) {
         }
     });
 });
+
+$t->addTabUrl('label', 'testtab.php');

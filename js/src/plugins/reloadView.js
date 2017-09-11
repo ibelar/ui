@@ -3,7 +3,6 @@ import atkPlugin from 'plugins/atkPlugin';
 export default class reloadView extends atkPlugin {
 
     main() {
-
         if(this.settings.uri) {
             this.$el.api({
                 on: 'now',

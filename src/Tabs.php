@@ -63,7 +63,11 @@ class Tabs extends View
         $sub->setAttr('data-tab', $item->name);
 
         //# TODO: refactor this ugly hack
+        $test = $this->app->url($url);
+        $test2 = str_replace('.php.', '.', $this->app->url($url)).'#';
         $item->setPath(str_replace('.php.', '.', $this->app->url($url)).'#');
+        //$item->setIsEvaluateScript(true);
+        //$item->setPath($this->app->url($url).'?');
     }
 
     /**

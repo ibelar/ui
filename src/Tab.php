@@ -18,9 +18,10 @@ class Tab extends Item
 
     public function renderView()
     {
+
         if ($this->path) {
             $this->js(true)->tab(
-                ['cache'=>false, 'auto'=>true, 'path'=>$this->path]
+                ['cache'=>true, 'auto'=>true, 'path'=>$this->path, 'evaluateScripts'=> true, 'alwaysRefresh' => true]
             );
         } else {
             $this->js(true)->tab();
